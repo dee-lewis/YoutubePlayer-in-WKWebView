@@ -600,7 +600,7 @@ NSString static *const kWKYTPlayerSyndicationRegexPattern = @"^https://tpc.googl
 /**
  * Convert a state value from the typed value to NSString.
  *
- * @param quality A |WKYTPlayerState| parameter.
+ * @param state A |WKYTPlayerState| parameter.
  * @return A string value to be used in the JavaScript bridge.
  */
 + (NSString *)stringForPlayerState:(WKYTPlayerState)state {
@@ -907,7 +907,6 @@ NSString static *const kWKYTPlayerSyndicationRegexPattern = @"^https://tpc.googl
  * @param index 0-index position of video to start playback on.
  * @param startSeconds Seconds after start of video to begin playback.
  * @param suggestedQuality Suggested WKYTPlaybackQuality to play the videos.
- * @return The result of cueing the playlist.
  */
 - (void)cuePlaylist:(NSString *)cueingString
               index:(int)index
@@ -930,7 +929,6 @@ NSString static *const kWKYTPlayerSyndicationRegexPattern = @"^https://tpc.googl
  * @param index 0-index position of video to start playback on.
  * @param startSeconds Seconds after start of video to begin playback.
  * @param suggestedQuality Suggested WKYTPlaybackQuality to play the videos.
- * @return The result of cueing the playlist.
  */
 - (void)loadPlaylist:(NSString *)cueingString
                index:(int)index
@@ -964,7 +962,7 @@ NSString static *const kWKYTPlayerSyndicationRegexPattern = @"^https://tpc.googl
  * Private method for evaluating JavaScript in the WebView.
  *
  * @param jsToExecute The JavaScript code in string format that we want to execute.
- * @return JavaScript response from evaluating code.
+ * @param completionHandler JavaScript response from evaluating code.
  */
 - (void)stringFromEvaluatingJavaScript:(NSString *)jsToExecute completionHandler:(void (^ __nullable)(NSString * __nullable response, NSError * __nullable error))completionHandler{
     [self.webView evaluateJavaScript:jsToExecute completionHandler:^(NSString * _Nullable response, NSError * _Nullable error) {
