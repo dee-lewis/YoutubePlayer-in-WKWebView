@@ -533,7 +533,7 @@ typedef NS_ENUM(NSInteger, WKYTPlayerError) {
  * JavaScript API defined here:
  *   https://developers.google.com/youtube/iframe_api_reference#getPlaybackRate
  *
- * @return An NSArray containing available playback rates. nil if there is an error.
+ * @param completionHandler An NSArray containing available playback rates. nil if there is an error.
  */
 - (void)getAvailablePlaybackRates:(void (^ __nullable)(NSArray * __nullable availablePlaybackRates, NSError * __nullable error))completionHandler;
 
@@ -579,7 +579,7 @@ typedef NS_ENUM(NSInteger, WKYTPlayerError) {
  * JavaScript API defined here:
  *   https://developers.google.com/youtube/iframe_api_reference#getPlayerState
  *
- * @param comletionHandler |WKYTPlayerState| representing the state of the player.
+ * @param completionHandler |WKYTPlayerState| representing the state of the player.
  */
 - (void)getPlayerState:(void (^ __nullable)(WKYTPlayerState playerState, NSError * __nullable error))completionHandler;
 
@@ -622,7 +622,7 @@ typedef NS_ENUM(NSInteger, WKYTPlayerError) {
  * JavaScript API defined here:
  *   https://developers.google.com/youtube/iframe_api_reference#getAvailableQualityLevels
  *
- * @param copmletionHandler An NSArray containing available playback quality levels. Returns nil if there is an error.
+ * @param completionHandler An NSArray containing available playback quality levels. Returns nil if there is an error.
  */
 - (void)getAvailableQualityLevels:(void (^ __nullable)(NSArray * __nullable availableQualityLevels, NSError * __nullable error))completionHandler;
 
